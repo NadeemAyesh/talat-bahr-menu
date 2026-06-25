@@ -129,13 +129,17 @@
   }
 
   async function init() {
-    const data = await MenuStore.load();
-    if (!data) return;
+    try {
+      const data = await MenuStore.load();
+      if (!data) return;
 
-    window.MENU_DATA = data;
-    restaurant = data.restaurant;
-    renderMenu();
-    window.PageSlider?.init();
+      window.MENU_DATA = data;
+      restaurant = data.restaurant;
+      renderMenu();
+      window.PageSlider?.init();
+    } finally {
+      window.SiteLoader?.hide();
+    }
   }
 
   if (document.readyState === "loading") {

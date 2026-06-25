@@ -8,9 +8,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="images/logo.png" type="image/png" />
+  <script>
+    (function () {
+      var s = localStorage.getItem("talat-bahr-theme");
+      var t = s || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="admin-page min-h-screen">
+
+  <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="true" aria-label="التبديل إلى الوضع النهاري" title="وضع نهاري">
+    <svg class="theme-toggle__icon theme-toggle__icon--sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+    </svg>
+    <svg class="theme-toggle__icon theme-toggle__icon--moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+    </svg>
+  </button>
 
   <div id="login-screen" class="admin-login">
     <div class="admin-card admin-card--narrow">
@@ -90,6 +106,7 @@
     <p id="toast" class="admin-toast hidden" role="status"></p>
   </div>
 
+  <script src="js/theme.js"></script>
   <script src="js/menu-data.js"></script>
   <script src="js/menu-store.js"></script>
   <script src="js/admin.js"></script>
