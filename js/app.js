@@ -6,7 +6,7 @@
   "use strict";
 
   const pageTrack = document.getElementById("page-track");
-  const restaurant = MENU_DATA.restaurant;
+  let restaurant;
 
   const FALLBACK_IMAGES = {
     grilled: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b2a2?w=200&q=80&fit=crop",
@@ -122,11 +122,18 @@
     const catchSlide = pageTrack.querySelector('[data-page-id="catch"]');
     if (!heroSlide || !catchSlide) return;
 
-    const slidesHtml = MENU_DATA.categories.map(renderCategorySlide).join("");
+    const slidesHtml = window.MENU_DATA.categories
+      .map(renderCategorySlide)
+      .join("");
     catchSlide.insertAdjacentHTML("beforebegin", slidesHtml);
   }
 
-  function init() {
+  async function init() {
+    const data = await MenuStore.load();
+    if (!data) return;
+
+    window.MENU_DATA = data;
+    restaurant = data.restaurant;
     renderMenu();
     window.PageSlider?.init();
   }

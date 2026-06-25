@@ -409,3 +409,172 @@
     display: none;
   }
 }
+
+/* لوحة التحكم */
+.admin-page {
+  @apply bg-ocean-950 text-white font-body overflow-auto;
+}
+
+.admin-page .hidden {
+  display: none !important;
+}
+
+.admin-login {
+  @apply min-h-screen flex items-center justify-center p-4;
+}
+
+.admin-app {
+  @apply min-h-screen pb-8;
+}
+
+.admin-header {
+  @apply sticky top-0 z-10 flex flex-wrap items-center justify-between gap-4
+         px-4 py-4 border-b border-ocean-800/80 bg-ocean-950/95 backdrop-blur;
+}
+
+.admin-header__actions {
+  @apply flex flex-wrap gap-2;
+}
+
+.admin-main {
+  @apply max-w-2xl mx-auto px-4 py-6 space-y-6;
+}
+
+.admin-card {
+  @apply bg-ocean-900/60 border border-ocean-800/60 rounded-xl p-4 md:p-5;
+}
+
+.admin-card--narrow {
+  @apply w-full max-w-sm;
+}
+
+.admin-card--muted {
+  @apply bg-ocean-900/30;
+}
+
+.admin-title {
+  @apply text-xl font-semibold text-ocean-300;
+}
+
+.admin-subtitle {
+  @apply text-ocean-400/80 text-sm mt-1;
+}
+
+.admin-section-title {
+  @apply text-base font-medium text-ocean-300 mb-3;
+}
+
+.admin-toolbar {
+  @apply flex flex-wrap items-end gap-3;
+}
+
+.admin-select {
+  @apply flex-1 min-w-[10rem];
+}
+
+.admin-form {
+  @apply space-y-3;
+}
+
+.admin-form--grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-3;
+}
+
+.admin-form__full {
+  @apply sm:col-span-2;
+}
+
+.admin-form__actions {
+  @apply flex gap-2 pt-1;
+}
+
+.admin-label {
+  @apply block text-sm text-ocean-400 mb-1;
+}
+
+.admin-input {
+  @apply w-full rounded-lg bg-ocean-950 border border-ocean-700/80 px-3 py-2
+         text-white focus:outline-none focus:border-ocean-500;
+}
+
+.admin-btn {
+  @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium
+         transition-colors disabled:opacity-50;
+}
+
+.admin-btn--primary {
+  @apply bg-ocean-500 text-ocean-950 hover:bg-ocean-400;
+}
+
+.admin-btn--ghost {
+  @apply border border-ocean-700 text-ocean-300 hover:bg-ocean-800/60;
+}
+
+.admin-btn--danger {
+  @apply border border-red-800/60 text-red-300 hover:bg-red-950/40;
+}
+
+.admin-btn--sm {
+  @apply px-2.5 py-1 text-xs;
+}
+
+.admin-items {
+  @apply space-y-2;
+}
+
+.admin-item {
+  @apply flex flex-wrap items-center gap-3 p-3 rounded-lg bg-ocean-900/40 border border-ocean-800/50;
+}
+
+.admin-item__info {
+  @apply flex-1 min-w-[8rem] flex flex-col gap-0.5;
+}
+
+.admin-item__name {
+  @apply font-medium;
+}
+
+.admin-item__desc {
+  @apply text-xs text-ocean-400;
+}
+
+.admin-item__tag {
+  @apply text-xs text-ocean-500 bg-ocean-800/50 px-2 py-0.5 rounded w-fit;
+}
+
+.admin-item__price {
+  @apply text-ocean-300 font-medium whitespace-nowrap;
+}
+
+.admin-item__actions {
+  @apply flex gap-1;
+}
+
+.admin-empty {
+  @apply text-center text-ocean-500 py-8;
+}
+
+.admin-row {
+  @apply flex flex-wrap gap-2;
+}
+
+.admin-file-label {
+  @apply cursor-pointer;
+}
+
+.admin-hint {
+  @apply text-xs text-ocean-500 mt-3 leading-relaxed;
+}
+
+.admin-hint code {
+  @apply text-ocean-400 bg-ocean-800/50 px-1 rounded;
+}
+
+.admin-error {
+  @apply text-red-400 text-sm text-center;
+}
+
+.admin-toast {
+  @apply fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-lg
+         bg-ocean-500 text-ocean-950 text-sm font-medium shadow-lg;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة التحكم | طلة البحر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="admin-page min-h-screen">
+
+  <div id="login-screen" class="admin-login">
+    <div class="admin-card admin-card--narrow">
+      <h1 class="admin-title">لوحة التحكم</h1>
+      <p class="admin-subtitle">طلة البحر — إدارة الأصناف</p>
+      <form id="login-form" class="admin-form">
+        <label class="admin-label" for="admin-pin">رمز الدخول</label>
+        <input id="admin-pin" type="password" class="admin-input" placeholder="••••" required autocomplete="current-password" />
+        <button type="submit" class="admin-btn admin-btn--primary w-full">دخول</button>
+        <p id="login-error" class="admin-error hidden">رمز غير صحيح</p>
+      </form>
+    </div>
+  </div>
+
+  <div id="admin-app" class="admin-app hidden">
+    <header class="admin-header">
+      <div>
+        <h1 class="admin-title text-lg">إدارة المنيو</h1>
+        <p class="admin-subtitle text-sm">أضف · عدّل · احذف</p>
+      </div>
+      <div class="admin-header__actions">
+        <a href="index.html" class="admin-btn admin-btn--ghost" target="_blank">معاينة المنيو</a>
+        <button type="button" id="btn-save" class="admin-btn admin-btn--primary">حفظ</button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <div class="admin-toolbar">
+        <label class="admin-label" for="category-select">القسم</label>
+        <select id="category-select" class="admin-input admin-select"></select>
+        <button type="button" id="btn-add-category" class="admin-btn admin-btn--ghost">+ قسم</button>
+      </div>
+
+      <div id="items-list" class="admin-items"></div>
+
+      <div class="admin-card">
+        <h2 class="admin-section-title" id="form-title">إضافة صنف</h2>
+        <form id="item-form" class="admin-form admin-form--grid">
+          <input type="hidden" id="edit-item-id" />
+          <div>
+            <label class="admin-label" for="item-name">الاسم</label>
+            <input id="item-name" class="admin-input" required placeholder="مثال: شوربة كريمة" />
+          </div>
+          <div>
+            <label class="admin-label" for="item-price">السعر (ش)</label>
+            <input id="item-price" type="number" min="0" step="1" class="admin-input" required placeholder="15" />
+          </div>
+          <div class="admin-form__full">
+            <label class="admin-label" for="item-desc">وصف (اختياري)</label>
+            <input id="item-desc" class="admin-input" placeholder="للأصناف الخاصة فقط" />
+          </div>
+          <div class="admin-form__full">
+            <label class="admin-label" for="item-section">قسم فرعي (اختياري — للمشروبات مثلاً: الساخنة)</label>
+            <input id="item-section" class="admin-input" placeholder="اتركه فارغاً للقسم العادي" />
+          </div>
+          <div class="admin-form__actions admin-form__full">
+            <button type="submit" class="admin-btn admin-btn--primary" id="btn-submit">إضافة</button>
+            <button type="button" id="btn-cancel-edit" class="admin-btn admin-btn--ghost hidden">إلغاء</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="admin-card admin-card--muted">
+        <h2 class="admin-section-title">نسخ احتياطي</h2>
+        <div class="admin-row">
+          <button type="button" id="btn-export" class="admin-btn admin-btn--ghost">تصدير menu.json</button>
+          <label class="admin-btn admin-btn--ghost admin-file-label">
+            استيراد ملف
+            <input type="file" id="btn-import" accept=".json" class="hidden" />
+          </label>
+          <button type="button" id="btn-reset" class="admin-btn admin-btn--danger">إعادة المنيو الأصلي</button>
+        </div>
+        <p class="admin-hint">بعد التصدير: استبدل ملف <code>data/menu.json</code> وارفع المشروع على Netlify للنشر الدائم.</p>
+      </div>
+    </main>
+
+    <p id="toast" class="admin-toast hidden" role="status"></p>
+  </div>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/menu-store.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
