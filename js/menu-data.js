@@ -1,0 +1,308 @@
+/**
+ * بيانات المنيو — يُحمَّل من menu.json
+ * جاهز للربط مع لوحة الإدارة لاحقًا
+ */
+
+const MENU_DATA = {
+  restaurant: {
+    name: "طلة البحر",
+    nameEn: "talat bahr",
+    tagline: "حيث تلتقي نكهات البحر بالأصالة والجودة",
+    welcome: "مرحبًا بكم",
+    description:
+      "نقدّم لكم تجربة مميزة من أشهى المأكولات البحرية الطازجة المحضّرة بعناية لتمنحكم مذاقًا لا يُنسى",
+    currency: "ش",
+  },
+  categories: [
+    {
+      id: "soups",
+      name: "الشوربات",
+      icon: "🍲",
+      tagline: "دفء البحر في طبق",
+      items: [
+        {
+          id: "s1",
+          name: "شوربة كريمة",
+          price: 15,
+          image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=200&q=80&fit=crop",
+        },
+        {
+          id: "s2",
+          name: "شوربة طلة بحر",
+          price: 20,
+          image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=200&q=80&fit=crop",
+        },
+      ],
+    },
+    {
+      id: "salads",
+      name: "السلطات",
+      icon: "🥗",
+      items: [
+        {
+          id: "sl1",
+          name: "بقدونسية",
+          price: 7,
+          image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sl2",
+          name: "تركية",
+          price: 7,
+          image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sl3",
+          name: "ملفوف أحمر",
+          price: 7,
+          image: "https://images.unsplash.com/photo-1623428187425-039c4173dbd7?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sl4",
+          name: "حمص",
+          price: 10,
+          image: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sl5",
+          name: "فلاحية",
+          price: 10,
+          image: "https://images.unsplash.com/photo-1607532949126-187d8b64d295?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sl6",
+          name: "غزاوية",
+          price: 15,
+          image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sl7",
+          name: "فرادورا ماري",
+          price: 35,
+          description:
+            "خس، بندورة، خيار، زيتون أخضر مشوي، جبنة هاوس مكس، جمبري مشوي، صوص، خبز مقلي",
+          image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=200&q=80&fit=crop",
+        },
+      ],
+    },
+    {
+      id: "grilled",
+      name: "مشاوي بحرية",
+      icon: "🔥",
+      items: [
+        {
+          id: "g1",
+          name: "سمك هامور مشوي",
+          price: 85,
+          image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b2a2?w=200&q=80&fit=crop",
+        },
+        {
+          id: "g2",
+          name: "سلمون مشوي",
+          price: 95,
+          image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&q=80&fit=crop",
+        },
+        {
+          id: "g3",
+          name: "سمك دنيس مشوي",
+          price: 120,
+          image: "https://images.unsplash.com/photo-1534043464124-387be9bcad6d?w=200&q=80&fit=crop",
+        },
+        {
+          id: "g4",
+          name: "ربيان مشوي",
+          price: 110,
+          image: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=200&q=80&fit=crop",
+        },
+      ],
+    },
+    {
+      id: "seafood-packet",
+      name: "Seafood Packet",
+      icon: "🦞",
+      items: [
+        {
+          id: "sp1",
+          name: "سي فود بويل",
+          price: 65,
+          image: "https://images.unsplash.com/photo-1559737558-2db5d388fabf?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sp2",
+          name: "سي فود ناتا",
+          price: 70,
+          image: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sp3",
+          name: "سي فود لادو ليمونو",
+          price: 75,
+          image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b2a2?w=200&q=80&fit=crop",
+        },
+      ],
+    },
+    {
+      id: "shrimp",
+      name: "وجبات الجمبري",
+      icon: "🦐",
+      items: [
+        {
+          id: "sh1",
+          name: "شرمب سكامبي",
+          price: 55,
+          image: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sh2",
+          name: "شرمب بتر فلاي",
+          price: 50,
+          image: "https://images.unsplash.com/photo-1563379926898-05f4575a58d8?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sh3",
+          name: "شرمب بريدد",
+          price: 48,
+          image: "https://images.unsplash.com/photo-1551248429-40975aa4f574?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sh4",
+          name: "شرمب جرل",
+          price: 52,
+          image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b2a2?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sh5",
+          name: "شرمب فرايد",
+          price: 48,
+          image: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sh6",
+          name: "شرمب جرل بربيريا",
+          price: 58,
+          image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&q=80&fit=crop",
+        },
+        {
+          id: "sh7",
+          name: "شرمب شاك",
+          price: 55,
+          image: "https://images.unsplash.com/photo-1559737558-2db5d388fabf?w=200&q=80&fit=crop",
+        },
+      ],
+    },
+    {
+      id: "main",
+      name: "أطباق رئيسية",
+      icon: "🍽️",
+      items: [
+        {
+          id: "m1",
+          name: "صحن بحري مشكل",
+          price: 180,
+          image: "https://images.unsplash.com/photo-1559737558-2db5d388fabf?w=200&q=80&fit=crop",
+        },
+        {
+          id: "m2",
+          name: "كبسة سمك",
+          price: 75,
+          image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=200&q=80&fit=crop",
+        },
+        {
+          id: "m3",
+          name: "مقلوبة ربيان",
+          price: 90,
+          image: "https://images.unsplash.com/photo-1563379926898-05f4575a58d8?w=200&q=80&fit=crop",
+        },
+        {
+          id: "m4",
+          name: "صيادية سمك",
+          price: 70,
+          image: "https://images.unsplash.com/photo-1604908176997-4314a0cb7080?w=200&q=80&fit=crop",
+        },
+        {
+          id: "m5",
+          name: "برياني بحري",
+          price: 85,
+          image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=200&q=80&fit=crop",
+        },
+      ],
+    },
+    {
+      id: "drinks",
+      name: "المشروبات",
+      icon: "🥤",
+      note: "أراجيل — فقط بعد الأكل",
+      sections: [
+        {
+          items: [
+            {
+              id: "d1",
+              name: "ليمون ونعنع فرش",
+              price: 12,
+              image: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=200&q=80&fit=crop",
+            },
+            {
+              id: "d2",
+              name: "بلو موهيتو",
+              price: 18,
+              image: "https://images.unsplash.com/photo-1551024709-8f23be9d8364?w=200&q=80&fit=crop",
+            },
+            {
+              id: "d3",
+              name: "موهيتو فواكه",
+              price: 16,
+              image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=200&q=80&fit=crop",
+            },
+            {
+              id: "d4",
+              name: "موهيتو كيوي",
+              price: 16,
+              image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200&q=80&fit=crop",
+            },
+            {
+              id: "d5",
+              name: "سبرايت",
+              price: 8,
+              image: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=200&q=80&fit=crop",
+            },
+            {
+              id: "d6",
+              name: "كوكاكولا",
+              price: 8,
+              image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=200&q=80&fit=crop",
+            },
+          ],
+        },
+        {
+          title: "الساخنة",
+          items: [
+            {
+              id: "d7",
+              name: "شاي",
+              price: 5,
+              image: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=200&q=80&fit=crop",
+            },
+            {
+              id: "d8",
+              name: "قهوة S",
+              price: 6,
+              image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200&q=80&fit=crop",
+            },
+            {
+              id: "d9",
+              name: "قهوة D",
+              price: 8,
+              image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=200&q=80&fit=crop",
+            },
+            {
+              id: "d10",
+              name: "نسكافيه",
+              price: 7,
+              image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=200&q=80&fit=crop",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};

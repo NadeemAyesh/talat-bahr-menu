@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="منيو مطعم طلة البحر — مأكولات بحرية طازجة" />
+  <title>طلة البحر | المنيو</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="h-dvh overflow-hidden">
+
+  <div id="site-background" class="site-background" aria-hidden="true">
+    <div class="site-background__poster"></div>
+  </div>
+
+  <div class="content-layer h-dvh flex flex-col">
+
+    <!-- منزلق الصفحات -->
+    <div id="page-slider" class="page-slider flex-1">
+      <div id="page-track" class="page-track">
+
+        <!-- الصفحة 0 — الترحيب -->
+        <div class="page-slide page-slide--hero" data-page-id="hero">
+          <div class="page-slide__scroll">
+            <header id="hero" class="relative min-h-full flex flex-col items-center justify-center px-4 py-16 md:py-24 text-center">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 rounded-full bg-ocean-500/10 blur-3xl animate-glow-pulse pointer-events-none" aria-hidden="true"></div>
+
+              <div class="mb-6 opacity-0 animate-fade-in animation-delay-100">
+                <h1 class="sr-only">مطعم طلة البحر</h1>
+                <img
+                  src="images/logo.png"
+                  alt="مطعم طلة البحر — talat bahr"
+                  class="site-logo animate-scale-in"
+                  width="520"
+                  height="280"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="divider-ornament mb-6 opacity-0 animate-fade-in animation-delay-200">
+                <span class="text-ocean-400 text-xs">◆</span>
+              </div>
+
+              <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold menu-title-gradient mb-8 opacity-0 animate-fade-in-up animation-delay-300">
+                المنيو
+              </h2>
+
+              <div class="max-w-lg mx-auto space-y-4 opacity-0 animate-fade-in-up animation-delay-400">
+                <p class="font-accent text-2xl md:text-3xl text-white/90 flex items-center justify-center gap-3">
+                  <span class="text-ocean-500/60 text-sm">〜</span>
+                  مرحبًا بكم
+                  <span class="text-ocean-500/60 text-sm">〜</span>
+                </p>
+                <p class="text-ocean-300/90 text-base md:text-lg font-light leading-relaxed">
+                  حيث تلتقي نكهات البحر بالأصالة والجودة
+                </p>
+                <p class="text-white/50 text-sm md:text-base leading-relaxed max-w-md mx-auto">
+                  نقدّم لكم تجربة مميزة من أشهى المأكولات البحرية الطازجة المحضّرة بعناية لتمنحكم مذاقًا لا يُنسى
+                </p>
+              </div>
+
+              <button type="button" data-page-target="soups" class="mt-12 group opacity-0 animate-fade-in animation-delay-600 page-jump" aria-label="انتقل إلى الشوربات">
+                <div class="flex flex-col items-center gap-2 text-ocean-400/60 group-hover:text-ocean-400 transition-colors">
+                  <span class="text-xs tracking-wider">ابدأ بالشوربات</span>
+                  <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                  </svg>
+                </div>
+              </button>
+            </header>
+          </div>
+        </div>
+
+        <!-- صفحات المنيو — تُحقَن بعد الترحيب -->
+        <div class="page-slide" data-page-id="catch">
+          <div class="page-slide__scroll">
+            <section id="catch" class="page-catch" aria-labelledby="catch-title">
+              <div class="page-catch__glow" aria-hidden="true"></div>
+              <div class="page-catch__content">
+                <div class="divider-ornament mb-8 md:mb-10 reveal stagger-1">
+                  <span class="text-ocean-400 text-xs">◆</span>
+                </div>
+                <h2 id="catch-title" class="page-catch__title reveal stagger-2">طرح البحر</h2>
+                <p class="page-catch__subtitle reveal stagger-3">صيد اليوم يقدّم طازجًا</p>
+                <div class="divider-ornament my-10 md:my-14 reveal stagger-4">
+                  <span class="text-ocean-400/60 text-sm">〜</span>
+                </div>
+                <p class="page-catch__tagline reveal stagger-5">من البحر لسفرتك</p>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- الفوتر -->
+        <div class="page-slide" data-page-id="footer">
+          <div class="page-slide__scroll page-slide__scroll--center">
+            <footer class="relative py-10 text-center w-full">
+              <div class="divider-ornament mb-6 max-w-[200px]">
+                <span class="text-ocean-400/50 text-xs">🐟</span>
+              </div>
+              <img src="images/logo.png" alt="" class="site-logo site-logo--sm mx-auto mb-4 opacity-80" width="160" height="107" loading="lazy" />
+              <p class="text-sm text-white/40">مأكولات بحرية طازجة بكل حب</p>
+              <p class="text-xs text-white/20 mt-4">© 2026 طلة البحر</p>
+            </footer>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- التنقل — أسفل على الجوال -->
+    <div id="page-controls" class="page-controls">
+      <button type="button" id="page-prev" class="page-arrow page-arrow--prev" aria-label="الصفحة السابقة">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>
+      <div id="page-dots" class="page-dots" aria-hidden="true"></div>
+      <button type="button" id="page-next" class="page-arrow page-arrow--next" aria-label="الصفحة التالية">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

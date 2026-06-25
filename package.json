@@ -1,0 +1,12 @@
+{
+  "name": "talat-bahr-menu",
+  "version": "1.0.0",
+  "description": "منيو إلكتروني لمطعم طلة البحر",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./css/style.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./css/style.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
